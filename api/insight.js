@@ -36,7 +36,7 @@ Keep it under 70 words.`;
     }
 
     const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${process.env.GEMINI_API_KEY}`,
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${process.env.GEMINI_API_KEY}`,
       {
         method: "POST",
         headers: {
@@ -72,9 +72,11 @@ Keep it under 70 words.`;
     return res.status(200).json({ insight });
 
   } catch (err) {
-    return res.status(500).json({
-      insight: null,
-      error: err.message
+      console.error(err);
+    
+      return res.status(500).json({
+        insight: null,
+        error: String(err)
     });
   }
 }
