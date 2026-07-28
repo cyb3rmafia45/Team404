@@ -70,7 +70,7 @@ submitBtn.addEventListener("click", async () => {
   // Ask the AI for a short personalized insight
   try {
     const recent = entries.slice(-7); // last 7 entries for context
-    const res = await fetch("/.netlify/functions/insight", {
+    const res = await fetch("/api/insight", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ type: "daily", entry, recent }),
@@ -190,7 +190,7 @@ document.getElementById("summary-btn").addEventListener("click", async () => {
   btn.disabled = true;
 
   try {
-    const res = await fetch("/.netlify/functions/insight", {
+    const res = await fetch("/api/insight", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ type: "weekly", recent: entries }),
