@@ -6,28 +6,32 @@ export default async function handler(req, res) {
   try {
     const { type, entry, recent } = req.body;
 
-    let prompt;
+    let prompt = "";
 
     if (type === "daily") {
-      prompt = `You are a warm, non-clinical wellness companion (NOT a therapist or doctor).
+      prompt = `You are a warm, supportive wellness companion.
 
-A user just logged today's check-in:
-- Mood: ${entry.mood}/10
-- Energy: ${entry.energy}/10
-- Sleep: ${entry.sleep ?? "not logged"} hours
-- Note: "${entry.note || "(no note)"}"
+Today's check-in:
+Mood: ${entry.mood}/10
+Energy: ${entry.energy}/10
+Sleep: ${entry.sleep ?? "Not logged"} hours
+Note: ${entry.note || "No note"}
 
 Recent history:
 ${JSON.stringify(recent)}
 
-In 2-3 short sentences, give a kind, supportive observation.
+Write 2-3 short supportive sentences.
+Mention one pattern if you notice one.
+Never diagnose.
 Keep it under 45 words.`;
     } else {
-      prompt = `Here are the user's recent check-ins:
+      prompt = `Here are the user's last seven check-ins:
+
 ${JSON.stringify(recent)}
 
-Write a short weekly summary (3-4 sentences).
-Mention one pattern and one gentle suggestion.
+Write a kind weekly summary in 3-4 sentences.
+Mention one positive observation and one gentle suggestion.
+Never diagnose.
 Keep it under 70 words.`;
     }
 
@@ -36,19 +40,19 @@ Keep it under 70 words.`;
       {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json"
         },
         body: JSON.stringify({
           contents: [
             {
               parts: [
                 {
-                  text: prompt,
-                },
-              ],
-            },
-          ],
-        }),
+                  text: prompt
+                }
+              ]
+            }
+          ]
+        })
       }
     );
 
@@ -57,7 +61,7 @@ Keep it under 70 words.`;
     if (!response.ok) {
       return res.status(500).json({
         insight: null,
-        error: data.error?.message || "Gemini API Error",
+        error: data.error?.message || "Gemini API Error"
       });
     }
 
@@ -66,10 +70,11 @@ Keep it under 70 words.`;
       "No insight generated.";
 
     return res.status(200).json({ insight });
+
   } catch (err) {
     return res.status(500).json({
       insight: null,
-      error: err.message,
+      error: err.message
     });
   }
 }
