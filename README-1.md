@@ -1,4 +1,109 @@
-# MindMend 🌿
+# 🌿 MindMend
+### AI-Powered Healthcare & Wellness Web Application
+
+MindMend is an AI-powered healthcare and wellness web application designed to help users monitor their daily well-being through simple health check-ins. By analysing users' mood, sleep, and energy levels, the application provides personalised wellness insights and encourages healthier lifestyle habits.
+
+---
+
+# 📖 Project Overview
+
+Maintaining good mental and physical health can be challenging in today's busy lifestyle. Many people fail to recognise unhealthy patterns until they begin affecting their daily lives.
+
+MindMend provides an intelligent and user-friendly platform where users can regularly log their wellness information and receive AI-generated guidance to improve their overall health.
+
+---
+
+# 🎯 Problem Statement
+
+Many individuals struggle to monitor their mental and physical wellness consistently. Existing healthcare platforms are often complex, expensive, or focused only on medical conditions rather than preventive wellness.
+
+MindMend aims to provide an accessible, AI-assisted solution that encourages users to build healthier habits through regular self-assessment and personalised recommendations.
+
+---
+
+# 💡 Solution
+
+MindMend allows users to record their daily mood, sleep quality, and energy levels. The application uses AI to analyse these inputs and generate short, meaningful wellness insights that help users understand their health patterns and make informed lifestyle choices.
+
+---
+
+# ✨ Key Features
+
+- 🤖 AI-powered wellness insights
+- 😊 Daily mood tracking
+- 😴 Sleep monitoring
+- ⚡ Energy level analysis
+- 📊 Wellness dashboard
+- 💬 Personalised health recommendations
+- 📱 Responsive and user-friendly interface
+
+---
+
+# 🛠 Tech Stack
+
+### Frontend
+- HTML5
+- CSS3
+- JavaScript
+
+### Backend
+- Netlify Functions
+
+### AI Integration
+- Claude AI API
+
+### Hosting
+- Netlify
+
+---
+
+# 📷 Screenshots
+
+> *(Insert screenshots of your application here.)*
+
+- Home Page
+- AI Wellness Chat
+- Mood Tracker
+- Dashboard
+- Health Insights
+
+---
+
+# 🚀 Future Scope
+
+- Doctor consultation integration
+- Emergency SOS support
+- Wearable device integration
+- Multi-language support
+- Health report generation
+- AI-based health prediction
+- Appointment booking
+
+---
+
+# 👥 Team
+
+**Team 404**
+
+- Synthia Debnath
+- Team Member 2
+- Team Member 3
+- Team Member 4
+
+---
+
+# 🌐 Live Demo
+
+**Website:** *(Paste your Netlify link here)*
+
+**GitHub Repository:** *(Paste your GitHub repository link here)*
+
+---
+
+# ⚙ Developer Setup
+
+
+#MindMend 🌿
 A tiny, calm wellness check-in app. Log your mood, sleep, and energy once a
 day. An AI (Google Gemini — free, no credit card needed) reads your entries
 and gives you a kind, short insight. Over time you get a dashboard showing
