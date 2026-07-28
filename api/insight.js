@@ -61,6 +61,9 @@ Keep it under 70 words.`;
 
     const data = await response.json();
 
+    console.log("Gemini response:",
+    JSON.stringify(data));
+
     if (!response.ok) {
       return res.status(500).json({
         insight: null,
