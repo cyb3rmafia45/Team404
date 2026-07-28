@@ -1,0 +1,140 @@
+/* ===== Design tokens =====
+   Palette: pale sage paper background, deep pine ink, warm amber accent.
+   Type: Fraunces (display, journal feel) / Inter (body) / IBM Plex Mono (data)
+*/
+:root {
+  --bg: #EEF2ED;
+  --paper: #FBFCFA;
+  --ink: #24312C;
+  --pine: #1F3A34;
+  --sage: #7FA69B;
+  --amber: #D9A45B;
+  --coral: #E8927C;
+  --line: #D8E0DA;
+  --radius: 14px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+}
+
+h1 {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: 2rem;
+  margin: 0.2rem 0 1.2rem 0;
+  color: var(--pine);
+}
+
+.eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin: 0 0 0.4rem 0;
+}
+
+/* ===== Top bar ===== */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 1.5rem;
+  max-width: 640px;
+  margin: 0 auto;
+}
+.brand { display: flex; align-items: center; gap: 0.5rem; }
+.brand-mark { color: var(--amber); font-size: 1.3rem; }
+.brand-name { font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.15rem; color: var(--pine); }
+
+.tabs { display: flex; gap: 0.4rem; background: var(--paper); padding: 0.3rem; border-radius: 999px; border: 1px solid var(--line); }
+.tab-btn {
+  border: none; background: none; padding: 0.45rem 1rem; border-radius: 999px;
+  font-family: 'Inter'; font-size: 0.85rem; font-weight: 500; color: var(--ink); cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.tab-btn.active { background: var(--pine); color: var(--paper); }
+
+/* ===== Layout ===== */
+main { max-width: 640px; margin: 0 auto; padding: 0 1.5rem 3rem 1.5rem; }
+.view { display: none; }
+.view.active { display: block; animation: fadein 0.35s ease; }
+@keyframes fadein { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ===== Check-in card ===== */
+.checkin-card, .chart-card, .summary-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.6rem;
+  margin-bottom: 1.2rem;
+}
+
+.field { margin-bottom: 1.4rem; }
+.field label { display: block; font-size: 0.9rem; font-weight: 500; margin-bottom: 0.5rem; color: var(--pine); }
+
+input[type="range"] { width: 100%; accent-color: var(--amber); }
+input[type="number"], textarea {
+  width: 100%; padding: 0.7rem 0.8rem; border: 1px solid var(--line); border-radius: 8px;
+  font-family: 'Inter'; font-size: 0.95rem; background: var(--bg); color: var(--ink);
+}
+textarea { resize: vertical; }
+
+.scale-labels { display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--sage); margin-top: 0.3rem; }
+.mood-live { font-family: 'IBM Plex Mono', monospace; color: var(--amber); font-weight: 500; }
+
+.primary-btn {
+  width: 100%; padding: 0.9rem; border: none; border-radius: 8px;
+  background: var(--pine); color: var(--paper); font-family: 'Inter'; font-weight: 600; font-size: 0.95rem;
+  cursor: pointer; transition: opacity 0.2s;
+}
+.primary-btn:hover { opacity: 0.88; }
+.secondary-btn {
+  padding: 0.7rem 1.1rem; border: 1px solid var(--pine); border-radius: 8px; background: none;
+  color: var(--pine); font-family: 'Inter'; font-weight: 500; font-size: 0.88rem; cursor: pointer;
+}
+.secondary-btn:hover { background: var(--pine); color: var(--paper); }
+
+.insight-box { margin-top: 1.4rem; padding-top: 1.2rem; border-top: 1px dashed var(--line); }
+.insight-box#insight-box p#insight-text { font-family: 'Fraunces', serif; font-size: 1.05rem; color: var(--pine); line-height: 1.5; }
+.hidden { display: none !important; }
+
+/* ===== Dashboard ===== */
+.dash-header { margin-bottom: 1rem; }
+
+/* Day strip: signature element — a week's rhythm as a row of tiles,
+   each tile's height/color reflects that day's mood. Real sequence = real info. */
+.day-strip {
+  display: flex; gap: 6px; align-items: flex-end; height: 90px;
+  background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 1rem; margin-bottom: 1.2rem;
+}
+.day-tile {
+  flex: 1; min-width: 0; border-radius: 4px; position: relative;
+  display: flex; align-items: flex-end; justify-content: center;
+  transition: height 0.3s ease;
+}
+.day-tile .day-label {
+  position: absolute; bottom: -22px; font-size: 0.65rem; font-family: 'IBM Plex Mono', monospace; color: var(--sage);
+}
+.day-tile.empty { background: var(--line); height: 8px !important; }
+
+.chart-card canvas { max-height: 240px; }
+
+#summary-text { font-size: 0.95rem; line-height: 1.55; margin-bottom: 1rem; }
+
+.empty-state {
+  text-align: center; padding: 2rem 1rem; color: var(--sage); font-size: 0.9rem;
+}
+
+@media (max-width: 480px) {
+  .topbar { flex-direction: column; gap: 0.8rem; }
+  h1 { font-size: 1.6rem; }
+}
