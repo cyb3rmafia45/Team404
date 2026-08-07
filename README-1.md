@@ -59,7 +59,8 @@ MindMend allows users to record their daily mood, sleep quality, and energy leve
 
 # 📷 Screenshots
 
-> *(Insert screenshots of your application here.)*
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f4c9d837-adc4-4aaa-9d96-e5d09f38609d" />
+
 
 - Home Page
 - AI Wellness Chat
@@ -86,17 +87,16 @@ MindMend allows users to record their daily mood, sleep quality, and energy leve
 **Team 404**
 
 - Synthia Debnath
-- Team Member 2
-- Team Member 3
-- Team Member 4
+- Adarsh Choudhury
+- Aritra Bhattacharya
 
 ---
 
 # 🌐 Live Demo
 
-**Website:** *(Paste your Netlify link here)*
+**Website:** https://team404-two.vercel.app/
 
-**GitHub Repository:** *(Paste your GitHub repository link here)*
+**GitHub Repository:** https://github.com/cyb3rmafia45/Team404
 
 ---
 
