@@ -50,7 +50,7 @@ MindMend allows users to record their daily mood, sleep quality, and energy leve
 - Netlify Functions
 
 ### AI Integration
-- Claude AI API
+- Gemini AI API
 
 ### Hosting
 - Netlify
