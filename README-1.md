@@ -60,6 +60,8 @@ MindMend allows users to record their daily mood, sleep quality, and energy leve
 # 📷 Screenshots
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f4c9d837-adc4-4aaa-9d96-e5d09f38609d" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d4b3d38f-ac6d-43ec-a5cb-e35515076795" />
+
 
 
 - Home Page
